@@ -16,4 +16,8 @@ podman push quay.io/stv707/do288-apache:v0
 
 ```
 
+* verify the pushed image ( do288-apache:v0 ) is in your quay.io registry. 
+>> use web browser 
 
+
+### END 
