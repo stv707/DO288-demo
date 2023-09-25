@@ -12,26 +12,22 @@ LABEL io.k8s.description="A basic Apache HTTP Server with basic index.html page"
 
 #Install httpd(apache and disable redhat yum sub 
 RUN   yum install -y --nodocs --disableplugin=subscription-manager httpd && \ 
-      yum clean all --disableplugin=subscription-manager -y
+      yum clean all --disableplugin=subscription-manager -y 
+
+#Copy index.html to apache root
+COPY ./src/ /var/www/html
 
 # Change web server port to 8080
 RUN sed -i "s/Listen 80/Listen 8080/g" /etc/httpd/conf/httpd.conf
 
 # Permissions to allow container to run on OpenShift
-RUN chgrp -R 0 /var/log/httpd /var/run/httpd && \
-    chmod -R g=u /var/log/httpd /var/run/httpd
-
-# Copy sample index.html to apache doc root
-COPY index.html  /var/www/html/
+RUN chgrp -R 0 /var/log/httpd /var/run/httpd && chmod -R g=u /var/log/httpd /var/run/httpd
 
 # Change the port to 8080
 EXPOSE 8080
-
-# This stuff is needed to ensure a clean start
-RUN rm -rf /run/httpd && mkdir /run/httpd
 
 # Run as a non-privileged user
 USER 1001
 
 # Launch httpd
-CMD /usr/sbin/httpd -DFOREGROUND
+CMD httpd -D FOREGROUND
