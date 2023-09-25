@@ -12,6 +12,7 @@ RUN   yum install -y --nodocs --disableplugin=subscription-manager httpd && \
 # Allows child images to inject their own content into DocumentRoot
 ONBUILD COPY src/ ${DOCROOT}/
 
+#Expose port 80/http 
 EXPOSE 80
 
 # This stuff is needed to ensure a clean start

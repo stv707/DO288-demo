@@ -1,5 +1,5 @@
-# Use the redhattraining/httpd-parent image as base
-FROM quay.io/redhattraining/httpd-parent
+# Use the base image created earlier in base-image dir 
+FROM quay.io/stv707/do288-apache:v0
 
 # Change the port to 8080
 EXPOSE 8080
