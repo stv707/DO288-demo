@@ -1,13 +1,12 @@
 {
-  "name": "config-inject",
+  "name": "node-configmap",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A simple Node.js app to demonstrate config maps and secrets",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Steven N",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
