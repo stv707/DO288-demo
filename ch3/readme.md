@@ -1,8 +1,10 @@
-* build the base-image
+* inspect using skopeo 
 
 ```bash
 
-podman build  -t do288-basic-apache:v0 .
+ skopeo inspect docker://quay.io/stv707/do288-basic-apache:v0
+
+ 
 
 ```
 
