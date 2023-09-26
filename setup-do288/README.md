@@ -14,7 +14,7 @@
   alias oca='oc login -u admin  -p xxxxxx https://api.ocp4.example.com:6443'
 
   ```
->> Please refer the password in DO288 Student Guide
+  >> Please refer the password in DO288 Student Guide
 
 
 
