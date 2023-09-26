@@ -31,7 +31,7 @@ oc describe bc bcdemo  | grep Strategy  -A 14
 * Simulate git push trigger 
 >> Since we don't have direct access to OCP in training, we will use the curl command to trigger a build after the push
 
- 1. contruct the curl url 
+ 1. construct the curl URL 
  ```bash 
  oc describe bc bcdemo  | grep 'Webhook GitHub' -A 1
 
@@ -66,8 +66,19 @@ oc describe bc bcdemo  | grep Strategy  -A 14
  ```bash 
  String msg = "I am running on server "+host+" Version 2.X \n";
  ```
+ 
+5. Push the changes to git repo 
 
+6. Run the run.sh shell script to simulate github webhook trigger 
 
+```bash 
+sh run.sh 
+
+oc get all 
+
+oc logs bc/bcdemo -f 
+
+```
 
 
 
