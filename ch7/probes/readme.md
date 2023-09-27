@@ -25,4 +25,22 @@ curl myprobes-probe-demo.apps.ocp4.example.com/ready
 
 curl myprobes-probe-demo.apps.ocp4.example.com/healthz
 
+oc describe deployment myprobes | grep -iA 1 liveness
+
+oc set probe deployment myprobes --liveness \
+--get-url=http://:8080/healthz \
+--initial-delay-seconds=2 --timeout-seconds=2
+
+oc set probe deployment myprobes --readiness \
+--get-url=http://:8080/ready \
+--initial-delay-seconds=2 --timeout-seconds=2
+
+
+POD=$(oc get pods -o name | grep -v build)
+
+ oc logs -f $POD
+
+ ./kill.sh
+
 ```
+
