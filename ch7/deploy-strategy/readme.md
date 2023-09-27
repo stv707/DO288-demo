@@ -37,7 +37,7 @@ curl <route>
 * Create V1 of kubia app and scale to 6 instances of pod 
 
 ```bash 
-oc new-project rolling-project
+oc new-project kubia-project
 
 oc new-app --name kubia --as-deployment-config --image=docker.io/stv707/kubia:v1
 
