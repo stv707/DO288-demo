@@ -1,0 +1,3 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QDeploy sample NodeJS app that has endpoints\n/ready\n/healthz\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QDeploy sample NodeJS app that has endpoints\n/ready\n/healthz\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QDeploy sample NodeJS app that has endpoints\n/ready\n/healthz\\E$"}
