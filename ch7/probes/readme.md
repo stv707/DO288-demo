@@ -16,3 +16,13 @@ npm_config_registry=http://nexus-common.apps.ap410.prod.ole.redhat.com/repositor
 nodejs:16-ubi8~https://github.com/stv707/DO288-demo
 ```
 
+```bash 
+oc expose svc myprobes
+
+curl myprobes-probe-demo.apps.ocp4.example.com
+
+curl myprobes-probe-demo.apps.ocp4.example.com/ready
+
+curl myprobes-probe-demo.apps.ocp4.example.com/healthz
+
+```
