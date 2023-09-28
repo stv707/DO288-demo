@@ -41,17 +41,19 @@ oc new-project kubia-project
 
 oc new-app --name kubia --as-deployment-config --image=docker.io/stv707/kubia:v1
 
-oc expose deployment kubia --port 8080
+oc expose dc/kubia --port 8080
 
 oc expose service kubia
 
 curl <route> 
 
-oc scale deploymentconfig kubia --replicas=6
+oc scale deploymentconfig kubia --replicas=2
 
 ***loop the curl to confirm all pod are load balanced*** 
 
-oc import-image kubia --confirm --all --from docker.io/stv707/kubia
+oc tag --source=docker docker.io/stv707/kubia:v2  kubia:v1 --reference-policy=local
+
+oc tag --source=docker docker.io/stv707/kubia:v3  kubia:v1 --reference-policy=local
 
 ```
 
